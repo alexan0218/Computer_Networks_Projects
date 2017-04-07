@@ -1,0 +1,258 @@
+Jihai An
+Yuanjie Sun
+gatech cs 3251 project2
+
+**********************Server output:********************************
+
+[jan61@networklab3 phase2]$ java Reldat_Server 8333 10
+hearing mode !!!
+received correct very first packet
+now sending ack 0
+sent ack0 again
+sent ack0 again
+sent ack0 again
+sent ack0 again
+sent ack0 again
+sent ack0 again
+sent ack0 again
+received first packet with actual data
+sended back first packet with modified data
+in data_transfer mode
+received FIN request from client
+connection closed successfully
+successful file transform
+
+
+hearing mode !!!
+
+
+**********************Client output:********************************
+
+[jan61@networklab4 phase2]$ java Reldat_Client networklab3 8333 10
+very first packet sent
+max window size: 10
+Enter you next command:
+transform short.txt
+sending packet with data, seq: 0
+sending packet with data, seq: 1
+sending packet with data, seq: 2
+sending packet with data, seq: 3
+sending packet with data, seq: 4
+sending packet with data, seq: 5
+sending packet with data, seq: 6
+sending packet with data, seq: 7
+sending packet with data, seq: 8
+sending packet with data, seq: 9
+correct acc:  0  from server
+writing to file
+sending packet with data, seq: 10
+correct acc:  1  from server
+writing to file
+sending packet with data, seq: 11
+correct acc:  2  from server
+writing to file
+sending packet with data, seq: 12
+correct acc:  3  from server
+writing to file
+sending packet with data, seq: 13
+correct acc:  4  from server
+writing to file
+sending packet with data, seq: 14
+correct acc:  5  from server
+writing to file
+sending packet with data, seq: 15
+correct acc:  6  from server
+writing to file
+sending packet with data, seq: 16
+correct acc:  7  from server
+writing to file
+sending packet with data, seq: 17
+correct acc:  8  from server
+writing to file
+sending packet with data, seq: 18
+correct acc:  9  from server
+writing to file
+sending packet with data, seq: 19
+correct acc:  10  from server
+writing to file
+sending packet with data, seq: 20
+correct acc:  11  from server
+writing to file
+sending packet with data, seq: 21
+correct acc:  12  from server
+writing to file
+sending packet with data, seq: 22
+correct acc:  13  from server
+writing to file
+sending packet with data, seq: 23
+correct acc:  14  from server
+writing to file
+sending packet with data, seq: 24
+correct acc:  15  from server
+writing to file
+sending packet with data, seq: 25
+correct acc:  16  from server
+writing to file
+sending packet with data, seq: 26
+correct acc:  17  from server
+writing to file
+sending packet with data, seq: 27
+correct acc:  18  from server
+writing to file
+sending packet with data, seq: 28
+correct acc:  19  from server
+writing to file
+sending packet with data, seq: 29
+correct acc:  20  from server
+writing to file
+sending packet with data, seq: 30
+correct acc:  21  from server
+writing to file
+sending packet with data, seq: 31
+correct acc:  22  from server
+writing to file
+sending packet with data, seq: 32
+correct acc:  23  from server
+writing to file
+reached end of file
+correct last few acc from server with acc num: 24
+writing to file
+correct last few acc from server with acc num: 25
+writing to file
+correct last few acc from server with acc num: 26
+writing to file
+correct last few acc from server with acc num: 27
+writing to file
+correct last few acc from server with acc num: 28
+writing to file
+correct last few acc from server with acc num: 29
+writing to file
+correct last few acc from server with acc num: 30
+writing to file
+correct last few acc from server with acc num: 31
+writing to file
+correct last few acc from server with acc num: 32
+writing to file
+finished tranforming this file
+Enter you next command:
+^C[jan61@networklab4 phase2]$
+[jan61@networklab4 phase2]$ clear
+[jan61@networklab4 phase2]$ clear
+[jan61@networklab4 phase2]$ clear
+[jan61@networklab4 phase2]$ java Reldat_Client networklab3 8333 10
+very first packet sent
+The server has not answered in the last 3 seconds.
+retrying... 2 more tries.
+very first packet sent
+The server has not answered in the last 3 seconds.
+retrying... 1 more tries.
+very first packet sent
+max window size: 10
+Enter you next command:
+transform short.txt
+sending packet with data, seq: 0
+sending packet with data, seq: 1
+sending packet with data, seq: 2
+sending packet with data, seq: 3
+sending packet with data, seq: 4
+sending packet with data, seq: 5
+sending packet with data, seq: 6
+sending packet with data, seq: 7
+sending packet with data, seq: 8
+sending packet with data, seq: 9
+correct acc:  0  from server
+writing to file
+sending packet with data, seq: 10
+correct acc:  1  from server
+writing to file
+sending packet with data, seq: 11
+correct acc:  2  from server
+writing to file
+sending packet with data, seq: 12
+correct acc:  3  from server
+writing to file
+sending packet with data, seq: 13
+correct acc:  4  from server
+writing to file
+sending packet with data, seq: 14
+correct acc:  5  from server
+writing to file
+sending packet with data, seq: 15
+correct acc:  6  from server
+writing to file
+sending packet with data, seq: 16
+correct acc:  7  from server
+writing to file
+sending packet with data, seq: 17
+correct acc:  8  from server
+writing to file
+sending packet with data, seq: 18
+correct acc:  9  from server
+writing to file
+sending packet with data, seq: 19
+correct acc:  10  from server
+writing to file
+sending packet with data, seq: 20
+correct acc:  11  from server
+writing to file
+sending packet with data, seq: 21
+correct acc:  12  from server
+writing to file
+sending packet with data, seq: 22
+correct acc:  13  from server
+writing to file
+sending packet with data, seq: 23
+correct acc:  14  from server
+writing to file
+sending packet with data, seq: 24
+correct acc:  15  from server
+writing to file
+sending packet with data, seq: 25
+correct acc:  16  from server
+writing to file
+sending packet with data, seq: 26
+correct acc:  17  from server
+writing to file
+sending packet with data, seq: 27
+correct acc:  18  from server
+writing to file
+sending packet with data, seq: 28
+correct acc:  19  from server
+writing to file
+sending packet with data, seq: 29
+correct acc:  20  from server
+writing to file
+sending packet with data, seq: 30
+correct acc:  21  from server
+writing to file
+sending packet with data, seq: 31
+correct acc:  22  from server
+writing to file
+sending packet with data, seq: 32
+correct acc:  23  from server
+writing to file
+reached end of file
+correct last few acc from server with acc num: 24
+writing to file
+correct last few acc from server with acc num: 25
+writing to file
+correct last few acc from server with acc num: 26
+writing to file
+correct last few acc from server with acc num: 27
+writing to file
+correct last few acc from server with acc num: 28
+writing to file
+correct last few acc from server with acc num: 29
+writing to file
+correct last few acc from server with acc num: 30
+writing to file
+correct last few acc from server with acc num: 31
+writing to file
+correct last few acc from server with acc num: 32
+writing to file
+finished tranforming this file
+Enter you next command:
+disconnect
+ready to close connection
+connection is closed, time waited 30 secs
+all successful, done
