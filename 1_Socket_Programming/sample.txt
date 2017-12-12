@@ -1,0 +1,205 @@
+smsengineUDP output:
+	
+BEGIN RUNNING:
+	$ python smsengineUDP.py 1029 spam.txt
+	Creating UDP server socket...
+	Binding the socket and the address
+	('networklab1', 1029)
+	receiving data...
+
+INVALID INPUT:
+	$ python smsengineUDP.py
+	Invalid input:
+	Please use: PORT + FILE_NAME
+
+	$ python smsengineUDP.py 102 spam.txt
+	Invalid port number, each registered port is in range 1024-65535
+
+	$ python smsengineUDP.py 1029 spam.ha
+	Unrecognizable file type, please use '.txt' files
+
+VALID INPUT:
+	receiving data...
+	96  // char length (for testing)
+	Analyzed successfully, sending back response...
+	Sending back successfully:
+	0.333333333333 2 credit card credit CarD CrEdiT caRd
+
+ERRORS:
+	receiving data...
+	0
+	special message replied
+	Error: INPUT_NOT_IN_RANGE
+
+	receiving data...
+	3533
+	special message replied
+	Error: INPUT_NOT_IN_RANGE
+
+	receiving data...
+	34
+	special message replied
+	Sending back successfully:
+	Error: NON_ASCII_CHAR
+
+smsclientUDP output:
+
+VALID STATEMENT:
+	$ python smsclientUDP.py networklab1.cc.gatech.edu 1029 msg.txt
+	Creating UDP client socket...
+	Fetching server's ip...
+	Receiving message...
+	Response from server:
+	0.333333333333 2 credit card credit CarD CrEdiT caRd 
+	Exiting...
+
+INVALID INPUT:
+	$ python smsclientUDP.py
+	Invalid input
+	Please use: HOST_NAME + PORT + FILE_NAME
+	
+	$ python smsclientUDP.py 127.0.0.1 102 msg.txt
+	Invalid port number, each registered port is in range 1024-65535
+
+	$ python smsclientUDP.py 127.0.0.1 1029 msg.tt
+	File I/O error: [Errno 2] No such file or directory: 'msg.tt'
+
+ERRORS:
+	$ python smsclientUDP.py 127.0.0.1 1029 msg.txt
+	Creating UDP client socket...
+	Fetching server's ip...
+	Receiving message...
+	Timed out, tries: 1
+	Receiving message...
+	Timed out, tries: 2
+	Receiving message...
+	Timed out, tries: 3
+	Reached limited trail times. exiting...
+
+	$ python smsclientUDP.py networklab1.cc.gatech.edu 1029 msg1.txt
+	Creating UDP client socket...
+	Fetching server's ip...
+	Receiving message...
+	Response from server:
+	0 -1 INPUT_NOT_IN_RANGE
+	Exiting...
+	
+	$ python smsclientUDP.py networklab1.cc.gatech.edu 1029 msg2.txt
+	Creating UDP client socket...
+	Fetching server's ip...
+	Receiving message...
+	Response from server:
+	0 -1 INPUT_NOT_IN_RANGE
+	Exiting...
+	
+	$ python smsclientUDP.py networklab1.cc.gatech.edu 1029 msg3.txt
+	Creating UDP client socket...
+	Fetching server's ip...
+	Receiving message...
+	Response from server:
+	0 -1 NON_ASCII_CHAR
+	Exiting...
+
+smsengineTCP output:
+
+BEGIN RUNNING:
+	$ python smsengineTCP.py 1029 spam.txt
+	Creating TCP server socket...
+	Binding the socket and the address
+	('networklab1', 1029)
+	The server is now listening for TCP connection requests from the client
+
+INVALID INPUT:
+	$ python smsengineTCP.py
+	Invalid input:
+	Please use: PORT + FILE_NAME
+
+	$ python smsengineTCP.py 102 spam.txt
+	Invalid port number, each registered port is in range 1024-65535
+
+	$ python smsengineTCP.py 1029 spam.ha
+	Unrecognizable file type, please use '.txt' files
+
+VALID INPUT:
+	receiving data...
+	96 // char length(for testing)
+	Analyzed successfully, sending back response...
+	Sending back successfully:
+	0.333333333333 2 credit card credit CarD CrEdiT caRd
+
+ERRORS:
+	receiving data...
+	0
+	special message replied
+	Error: INPUT_NOT_IN_RANGE
+
+	receiving data...
+	3533
+	special message replied
+	Error: INPUT_NOT_IN_RANGE
+
+	receiving data...
+	34
+	special message replied
+	Sending back successfully:
+	Error: NON_ASCII_CHAR
+
+smsclientUDP output:
+
+VALID STATEMENT:
+	$ python smsclientTCP.py networklab1.cc.gatech.edu 1029 msg.txt
+	Creating TCP client socket...
+	Fetching server's ip...
+	Connecting the server...
+	Sending the message...
+	Receiving response from server
+	Response from server:
+	0.333333333333 2 credit card credit CarD CrEdiT caRd 
+	Exiting...
+
+INVALID INPUT:
+	$ python smsclientTCP.py 
+	Invalid input
+	Please use: HOST_NAME + PORT + FILE_NAME
+
+	$ python smsclientTCP.py networklab1.cc.gatech.edu 1029 msg.txt
+	Creating TCP client socket...
+	Fetching server's ip...
+	Connecting the server...
+	Connection failed: [Errno 111] Connection refused
+
+	$ python smsclientTCP.py networklab1.cc.gatech.edu  102 msg.txt
+	Invalid port number, each registered port is in range 1024-65535
+
+	$ python smsclientTCP.py networklab1.cc.gatech.edu  1029 msg.tt
+	File I/O error: [Errno 2] No such file or directory: 'msg.tt'
+
+ERRORS:
+	$ python smsclientTCP.py 127.0.0.1 1029 msg.txt
+	Creating TCP client socket...
+	Fetching server's ip...
+	Connecting the server...
+	Connection failed: [Errno 111] Connection refused
+
+	$ python smsclientTCP.py networklab1.cc.gatech.edu 1029 msg1.txt
+	0 -1 INPUT_NOT_IN_RANGE
+
+	$ python smsclientTCP.py networklab1.cc.gatech.edu 1029 msg2.txt
+	Creating TCP client socket...
+	Fetching server's ip...
+	Connecting the server...
+	Sending the message...
+	Receiving response from server
+	Response from server:
+	0 -1 INPUT_NOT_IN_RANGE
+	Exiting...
+
+	$ python smsclientTCP.py networklab1.cc.gatech.edu 1029 msg3.txt
+	Creating TCP client socket...
+	Fetching server's ip...
+	Connecting the server...
+	Sending the message...
+	Receiving response from server
+	Response from server:
+	0 -1 NON_ASCII_CHAR
+	Exiting...
